@@ -17,14 +17,25 @@ namespace WpfApp1
 {
 	public partial class MainWindow : Window
 	{
-		private forecastAPI apiWeather;
+		private forecastAPI apiWeather = new forecastAPI();
 		private WeatherModel t;
 
 
 		public MainWindow() 
 		{
 			InitializeComponent();
+			clearLabels();
+
+        }
+
+		private void clearLabels()
+		{
+			lbl_t_temp_v.Content = "";
+			lbl_t_temp_max_v.Content = "";
+			lbl_t_temp_min_v.Content = "";
+			lbl_t_temp_sen_v.Content = "";
 		}
+
 
 		private void bt_getResults_Click(object sender, RoutedEventArgs e) 
 		{
@@ -34,14 +45,14 @@ namespace WpfApp1
 				return;
 			}
 
-			tb_result.Text = "";
+			t = apiWeather.processRequestChain(tb_search.Text);
 
-			apiWeather = new forecastAPI(tb_search.Text);
+			lbl_t_temp_v.Content = t.daily.data[0].temperature + "ºC";
+            lbl_t_temp_max_v.Content = t.daily.data[0].temperature_max + "ºC";
+            lbl_t_temp_min_v.Content = t.daily.data[0].temperature_min + "ºC";
+            lbl_t_temp_sen_v.Content = t.daily.data[0].feels_like + "ºC";
 
-			//tb_result.Text = "Região: " + t.daily.data[0].feels_like + "\n " +
-			//				"Temperatura: " + t.current.temp_c + "ºC \n " +
-			//				"Sensação: " + t.current.feelslike_c + "ºC \n " +
-			//				"Estado do Céu: " + t.current.condition.text;
-		}
+
+        }
 	}
 }

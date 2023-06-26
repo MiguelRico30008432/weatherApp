@@ -13,9 +13,9 @@ namespace WpfApp1
 		private WeatherModel t;
         private LocationModel l;
 
-        public forecastAPI(string input)
+        public WeatherModel processRequestChain (string input)
 		{
-			getForecast(getLocationID(input));
+			return getForecast(getLocationID(input));
 		}
 
 
