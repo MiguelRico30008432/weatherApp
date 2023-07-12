@@ -77,10 +77,19 @@ namespace WpfApp1
 
 		private void populateComboBox(List<LocationModel> location) 
 		{
+			var insert = true;
+
 			foreach (LocationModel i in location) 
 			{
-				//foreach (Object i in comboBox.Items) { if (i == model.adm_area1) { break; } }
-				comboBox.Items.Add(i.adm_area1);
+				foreach (Object j in comboBox.Items) { 
+					if (j.ToString() == i.adm_area1) 
+					{
+						insert = false;
+						break;
+					} 
+				}
+				if(insert == true) {comboBox.Items.Add(i.adm_area1);}
+				insert = true;
 			}
 		}
 

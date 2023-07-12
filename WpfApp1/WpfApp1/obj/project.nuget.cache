@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mmlyzLw1cVmUfzWceRoSeA7Ej88GRUdLWlv1BZDpPYcOJ1hKYQo5grXjUHcxtOHntNW9S1oclXu94L+On5QTCw==",
+  "dgSpecHash": "BkGMjMmPP2gfQpY6P5mz5fEXrZX+PvpNB+nALepKAn9IPlz7mpzEgGKb+BI2w8oEsZcXxFubU91tA/uCHEhK8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\miguelrico\\Desktop\\New folder\\weatherApp-main\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+  "projectFilePath": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\miguelrico\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],

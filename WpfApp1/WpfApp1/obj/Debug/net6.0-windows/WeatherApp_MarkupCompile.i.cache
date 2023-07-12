@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\
 WeatherApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\App.xaml
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\App.xaml
 11407045341
 
 9661752183
 195637207731
 MainWindow.xaml;
 
-True
+False
 

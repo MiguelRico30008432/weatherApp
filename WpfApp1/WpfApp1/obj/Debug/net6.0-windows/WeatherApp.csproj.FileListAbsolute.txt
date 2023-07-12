@@ -67,3 +67,26 @@ C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\obj\Debug
 C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.pdb
 C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.genruntimeconfig.cache
 C:\Users\miguelrico\Desktop\New folder\weatherApp-main\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WeatherApp.dll
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\WeatherApp.exe
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\WeatherApp.deps.json
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\WeatherApp.runtimeconfig.json
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\WeatherApp.dll
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\WeatherApp.pdb
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.csproj.AssemblyReference.cache
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp_MarkupCompile.cache
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp_MarkupCompile.lref
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.g.resources
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.AssemblyInfoInputs.cache
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.AssemblyInfo.cs
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.csproj.CopyComplete
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.dll
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\refint\WeatherApp.dll
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.pdb
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.genruntimeconfig.cache
+C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WeatherApp.dll

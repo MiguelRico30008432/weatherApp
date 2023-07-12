@@ -56,11 +56,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\miguelrico\\Desktop\\New folder\\weatherApp-main\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+      "projectUniqueName": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
       "projectName": "WeatherApp",
-      "projectPath": "C:\\Users\\miguelrico\\Desktop\\New folder\\weatherApp-main\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+      "projectPath": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
       "packagesPath": "C:\\Users\\miguelrico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\miguelrico\\Desktop\\New folder\\weatherApp-main\\WpfApp1\\WpfApp1\\obj\\",
+      "outputPath": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\miguelrico\\AppData\\Roaming\\NuGet\\NuGet.Config",
