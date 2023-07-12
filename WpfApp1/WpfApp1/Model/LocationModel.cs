@@ -10,7 +10,7 @@ namespace WpfApp1
     {
         public string name { get; set; }
         public string place_id { get; set; }
-        public string timezone { get; set; }
+        public string adm_area1 { get; set; }
     }
 
 }

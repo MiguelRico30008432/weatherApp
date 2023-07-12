@@ -11,42 +11,28 @@ namespace WpfApp1
 	public class forecastAPI : baseAPI 
 	{
 		private WeatherModel t;
-        private LocationModel l;
-
-        public WeatherModel processRequestChain (string input)
-		{
-			return getForecast(getLocationID(input));
-		}
+        private List <LocationModel> l;
 
 
-		public string getLocationID(string parameter) 
+		public List<LocationModel> getLocationID(string parameter) 
 		{
 			string locationID = "";
 			var host = "ai-weather-by-meteosource.p.rapidapi.com";
 			var fullParameter = "text=" + parameter;
 			var endpoint = "find_places";
 			var url = "https://ai-weather-by-meteosource.p.rapidapi.com/" + endpoint + "?" + fullParameter;
-			string resutl = @"{
-						""name"": ""Cascais"",
-						""place_id"": ""cascais"",
-						""adm_area1"": ""Lisbon District"",
-						""adm_area2"": ""Cascais Municipality"",
-						""country"": ""Portuguese Republic"",
-						""lat"": ""38.69681N"",
-						""lon"": ""9.42147W"",
-						""timezone"": ""Europe/Lisbon"",
-						""type"": ""settlement""
-					  }";
+			string result = "";
+		
 			try 
 			{
-				//resutl = sendRequest(url, "get", host, null);
-				l = JsonConvert.DeserializeObject<LocationModel>(resutl);      
+				result = sendRequest(url, "get", host, null);
+				l = JsonConvert.DeserializeObject<List<LocationModel>>(result);      
             }
 			catch (Exception e) {
 				MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 
-			return l.place_id;
+			return l;
 		}
 
 
