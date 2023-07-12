@@ -51,12 +51,13 @@ namespace WpfApp1
 			}
 			
 			l = apiWeather.getLocationID(tb_search.Text);
+			int countDistinct = (from x in l select x.name).Distinct().Count();
 
-			if( l.Count > 1 ) 
+			if(countDistinct > 1 ) 
 			{
 				startProcessFromComboBox();
 			}
-			else if (l.Count == 1) 
+			else if (countDistinct == 1) 
 			{
 				getForecast(l[0].place_id);
 			}
@@ -78,17 +79,17 @@ namespace WpfApp1
 		private void populateComboBox(List<LocationModel> location) 
 		{
 			var insert = true;
-
 			foreach (LocationModel i in location) 
 			{
-				foreach (Object j in comboBox.Items) { 
-					if (j.ToString() == i.adm_area1) 
+				foreach (Object j in comboBox.Items) 
+				{ 
+					if (j.ToString() == i.name) 
 					{
 						insert = false;
 						break;
 					} 
 				}
-				if(insert == true) {comboBox.Items.Add(i.adm_area1);}
+				if(insert == true) {comboBox.Items.Add(i.name);}
 				insert = true;
 			}
 		}
@@ -96,8 +97,8 @@ namespace WpfApp1
 
 		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) 
 		{
-			LocationModel selectedLocation = l.Where(f => f.adm_area1 == comboBox.SelectedValue).FirstOrDefault();
-			getForecast(selectedLocation.place_id);
+			LocationModel selectedLocation = l.Where(f => f.name == comboBox.SelectedValue).FirstOrDefault();
+			if (selectedLocation != null) { getForecast(selectedLocation.place_id); };
 		}
 
 
