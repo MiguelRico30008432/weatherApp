@@ -8,7 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="cloudy.jpeg" />
+    <None Remove="cloudy1.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="cloudy.jpeg" />
+    <Resource Include="cloudy1.jpeg" />
   </ItemGroup>
 
 </Project>

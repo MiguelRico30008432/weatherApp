@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj": {}
+    "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj": {
+    "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+        "projectUniqueName": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
         "projectName": "WeatherApp",
-        "projectPath": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
-        "packagesPath": "C:\\Users\\miguelrico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miguelrico\\Desktop\\teste\\weatherApp\\WpfApp1\\WpfApp1\\obj\\",
+        "projectPath": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+        "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\miguelrico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -43,6 +43,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -51,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.315\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

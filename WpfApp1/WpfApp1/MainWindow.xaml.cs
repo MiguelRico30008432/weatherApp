@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Image = System.Drawing.Image;
 
 namespace WpfApp1
 {
@@ -25,14 +27,21 @@ namespace WpfApp1
 		public MainWindow() 
 		{
 			InitializeComponent();
-			clearElements();
+			resetUIElements();
+		
         }
 
-		private void clearElements()
+		private void resetUIElements()
 		{
-			comboBox.Items.Clear();
+	
+            skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Git\weatherApp\WpfApp1\WpfApp1\Images\almostRain.jpg", UriKind.Relative));
+            myGrid.Background = skyStatusPicture;
+
+            comboBox.Items.Clear();
 			comboBox.Visibility = System.Windows.Visibility.Hidden;
-			l = null;
+			lbl_selectRegion.Visibility = System.Windows.Visibility.Hidden;
+			NextWeekDatagrid.Visibility = System.Windows.Visibility.Hidden;
+            l = null;
 			t = null;
 			lbl_t_temp_v.Content = "";
 			lbl_t_temp_max_v.Content = "";
@@ -42,7 +51,7 @@ namespace WpfApp1
 
 		private void bt_getResults_Click(object sender, RoutedEventArgs e) 
 		{
-			clearElements();
+			resetUIElements();
 
 			if (tb_search.Text == "") 
 			{
@@ -68,14 +77,15 @@ namespace WpfApp1
 			}
 		}
 
+
 		private void startProcessFromComboBox() 
 		{
-			comboBox.Visibility = System.Windows.Visibility.Visible;
+            lbl_selectRegion.Visibility = System.Windows.Visibility.Visible;
+            comboBox.Visibility = System.Windows.Visibility.Visible;
 			populateComboBox(l);
 		}
 
 	
-
 		private void populateComboBox(List<LocationModel> location) 
 		{
 			var insert = true;
@@ -115,6 +125,22 @@ namespace WpfApp1
 			lbl_t_temp_max_v.Content = t.daily.data[0].temperature_max + "ºC";
 			lbl_t_temp_min_v.Content = t.daily.data[0].temperature_min + "ºC";
 			lbl_t_temp_sen_v.Content = t.daily.data[0].feels_like + "ºC";
+
+			NextWeekDatagrid.Visibility = System.Windows.Visibility.Visible;
+
+            List <dataGridModel> gridData = new List<dataGridModel>();
+			for (int i = 1; i < t.daily.data.Count; i++)
+			{
+				gridData.Add(new dataGridModel{
+					date = t.daily.data[i].day,
+                    temp = t.daily.data[i].temperature,
+                    tempMin = t.daily.data[i].temperature_min,
+                    tempMax = t.daily.data[i].temperature_max,
+                    feelsLike = t.daily.data[i].feels_like
+                });
+			}
+
+            NextWeekDatagrid.ItemsSource = gridData;
 		}
-	}
+    }
 }

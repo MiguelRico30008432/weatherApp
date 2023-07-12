@@ -90,3 +90,7 @@ C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-wi
 C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.pdb
 C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WeatherApp.genruntimeconfig.cache
 C:\Users\miguelrico\Desktop\teste\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WeatherApp.dll
+C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
