@@ -33,10 +33,23 @@ namespace WpfApp1
 		{
 	        myGrid.Background = null;
             comboBox.Items.Clear();
+
+			lbl_today.Visibility = System.Windows.Visibility.Hidden;
+			lbl_dailyWeather.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_v.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_max_v.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_min_v.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_sen_v.Visibility = System.Windows.Visibility.Hidden;
 			comboBox.Visibility = System.Windows.Visibility.Hidden;
 			lbl_selectRegion.Visibility = System.Windows.Visibility.Hidden;
 			NextWeekDatagrid.Visibility = System.Windows.Visibility.Hidden;
-            l = null;
+			lbl_t_temp.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_max.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_min.Visibility = System.Windows.Visibility.Hidden;
+			lbl_t_temp_sen.Visibility = System.Windows.Visibility.Hidden;
+
+
+			l = null;
 			t = null;
 			lbl_t_temp_v.Content = "";
 			lbl_t_temp_max_v.Content = "";
@@ -55,7 +68,7 @@ namespace WpfApp1
 			}
 			
 			l = apiWeather.getLocationID(tb_search.Text);
-			int countDistinct = (from x in l select x.name).Distinct().Count();
+			int countDistinct = (from x in l select x.name+x.adm_area1+x.adm_area2+x.country).Distinct().Count();
 
 			if(countDistinct > 1 ) 
 			{
@@ -83,27 +96,17 @@ namespace WpfApp1
 	
 		private void populateComboBox(List<LocationModel> location) 
 		{
-			var insert = true;
 			foreach (LocationModel i in location) 
 			{
-				foreach (Object j in comboBox.Items) 
-				{ 
-					if (j.ToString() == i.name) 
-					{
-						insert = false;
-						break;
-					} 
-				}
-				if(insert == true) {comboBox.Items.Add(i.name);}
-				insert = true;
+				comboBox.Items.Add("Name: " + i.name + " / " + "Location: " + i.adm_area1 + "," + i.adm_area2 + " / " + "Country: " + i.country);
 			}
 		}
 
 
 		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) 
 		{
-			LocationModel selectedLocation = l.Where(f => f.name == comboBox.SelectedValue).FirstOrDefault();
-			if (selectedLocation != null) { getForecast(selectedLocation.place_id); };
+			//LocationModel selectedLocation = l.Where(f => f.name == comboBox.SelectedValue).FirstOrDefault();	
+			if (comboBox.SelectedIndex >= 0) { getForecast(l[comboBox.SelectedIndex].place_id); };
 		}
 
 
@@ -122,9 +125,21 @@ namespace WpfApp1
 			lbl_t_temp_min_v.Content = t.daily.data[0].temperature_min + "ºC";
 			lbl_t_temp_sen_v.Content = t.daily.data[0].feels_like + "ºC";
 
+			lbl_today.Visibility = System.Windows.Visibility.Visible;
+			
+			lbl_t_temp_v.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_max_v.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_min_v.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_sen_v.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_max.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_min.Visibility = System.Windows.Visibility.Visible;
+			lbl_t_temp_sen.Visibility = System.Windows.Visibility.Visible;
+
+			lbl_dailyWeather.Visibility = System.Windows.Visibility.Visible;
 			NextWeekDatagrid.Visibility = System.Windows.Visibility.Visible;
 
-            List <dataGridModel> gridData = new List<dataGridModel>();
+			List <dataGridModel> gridData = new List<dataGridModel>();
 			for (int i = 1; i < t.daily.data.Count; i++)
 			{
 				gridData.Add(new dataGridModel{
