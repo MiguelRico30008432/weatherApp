@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Image = System.Drawing.Image;
+
 
 namespace WpfApp1
 {
@@ -22,21 +13,23 @@ namespace WpfApp1
 		private forecastAPI apiWeather = new forecastAPI();
 		private List <LocationModel> l;
 		private WeatherModel t;
+		private Dictionary<string, string> backgroungPic = new Dictionary<string, string>() 
+		{
+			{"mostly_sunny", "cloudy.jpeg" },
+			{"sunny", "cloudy.jpeg" },
+			{"partly_sunny", "cloudy.jpeg" },
+		};
 
 
 		public MainWindow() 
 		{
 			InitializeComponent();
-			resetUIElements();
-		
+			resetUIElements();	
         }
 
 		private void resetUIElements()
 		{
-	
-            skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Git\weatherApp\WpfApp1\WpfApp1\Images\almostRain.jpg", UriKind.Relative));
-            myGrid.Background = skyStatusPicture;
-
+	        myGrid.Background = null;
             comboBox.Items.Clear();
 			comboBox.Visibility = System.Windows.Visibility.Hidden;
 			lbl_selectRegion.Visibility = System.Windows.Visibility.Hidden;
@@ -115,6 +108,7 @@ namespace WpfApp1
 		private void getForecast(string placeID) 
 		{
 			t = apiWeather.getForecast(placeID);
+			changeBackground();
 			populateLabels();
 		}
 
@@ -142,5 +136,11 @@ namespace WpfApp1
 
             NextWeekDatagrid.ItemsSource = gridData;
 		}
-    }
+
+		private void changeBackground() 
+		{		
+			skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Users\miguelrico\Desktop\weatherApp\WpfApp1\WpfApp1\Images\" + backgroungPic[t.daily.data[0].weather], UriKind.Relative));
+			myGrid.Background = skyStatusPicture;
+		}
+	}
 }

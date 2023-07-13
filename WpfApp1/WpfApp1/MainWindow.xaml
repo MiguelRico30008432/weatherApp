@@ -33,8 +33,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Data" Width="80" Binding="{Binding Path= date}" />
                 <DataGridTextColumn Header="Temperatura (ºC)" Width="100" Binding="{Binding Path= temp}" />
-                <DataGridTextColumn Header="Temp. Máx(ºC)" Width="90" Binding="{Binding Path= tempMin}" />
-                <DataGridTextColumn Header="Temp. Min(ºC)" Width="90" Binding="{Binding Path= tempMax}" />
+                <DataGridTextColumn Header="Temp. Máx(ºC)" Width="90" Binding="{Binding Path= tempMax}" />
+                <DataGridTextColumn Header="Temp. Min(ºC)" Width="90" Binding="{Binding Path= tempMin}" />
                 <DataGridTextColumn Header="Sensação" Width="90" Binding="{Binding Path= feelsLike}" />
             </DataGrid.Columns>
         </DataGrid>

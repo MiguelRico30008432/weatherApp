@@ -5,14 +5,10 @@
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -27,14 +23,10 @@
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         }
       },
       "System.Drawing.Common/7.0.0": {
@@ -43,14 +35,10 @@
           "Microsoft.Win32.SystemEvents": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Drawing.Common.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -171,23 +159,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\migue\\.nuget\\packages\\": {}
+    "C:\\Users\\miguelrico\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+      "projectUniqueName": "C:\\Users\\miguelrico\\Desktop\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
       "projectName": "WeatherApp",
-      "projectPath": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
-      "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\obj\\",
+      "projectPath": "C:\\Users\\miguelrico\\Desktop\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+      "packagesPath": "C:\\Users\\miguelrico\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\miguelrico\\Desktop\\weatherApp\\WpfApp1\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\miguelrico\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -224,8 +212,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -237,7 +224,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.315\\RuntimeIdentifierGraph.json"
       }
     }
   }
