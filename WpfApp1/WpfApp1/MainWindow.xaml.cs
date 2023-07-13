@@ -18,6 +18,8 @@ namespace WpfApp1
 			{"mostly_sunny", "cloudy.jpeg" },
 			{"sunny", "cloudy.jpeg" },
 			{"partly_sunny", "cloudy.jpeg" },
+			{"cloudly", "cloudy.jpeg" },
+			{"fog", "cloudy.jpeg" },
 		};
 
 
