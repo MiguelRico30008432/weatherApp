@@ -11,10 +11,10 @@ namespace WpfApp1
 	{
 		private HttpClient client = new HttpClient();
 		private HttpRequestMessage? request;
-		private string token = "e3e622aea3mshc0d22589918910fp1f84c2jsn24f15ee2adff";	
+		private string token = "e3e622aea3mshc0d22589918910fp1f84c2jsn24f15ee2adff";
 
 
-		public string sendRequest(string url, string method, string host, Dictionary<string,string> contents) 
+		public string sendRequest(string url, string method, string host, Dictionary<string,string> contents)
 		{
 			request = new HttpRequestMessage();
 			request.RequestUri = new Uri(url);

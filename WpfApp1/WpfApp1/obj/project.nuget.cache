@@ -1,12 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "rwG9MZEDdwerOl4KTI4PmsWTNQOnapkY0dmUeTZwFE6yg5Vu+dxwMtp+L2ruSm0Qa6Tu2m76vrMxwUaoU1/U3Q==",
+  "dgSpecHash": "iS35Boee+8YLhemItQTB6zRtbSonRm1bbGqKDpT5cEpImA85+EpY0lVHEE2cRAH1IhijA4GYJ1C4jd/CyjHAKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\miguelrico\\Desktop\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
+  "projectFilePath": "C:\\Git\\weatherApp\\WpfApp1\\WpfApp1\\WeatherApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\miguelrico\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\miguelrico\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\miguelrico\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.data.sqlite\\7.0.11\\microsoft.data.sqlite.7.0.11.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.11\\microsoft.data.sqlite.core.7.0.11.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.4\\sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }

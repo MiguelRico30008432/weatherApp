@@ -11,7 +11,8 @@ namespace WpfApp1
 	public partial class MainWindow : Window
 	{
 		private forecastAPI apiWeather = new forecastAPI();
-		private List <LocationModel> l;
+		private dataBase db = new dataBase();
+        private List <LocationModel> l;
 		private WeatherModel t;
 		private Dictionary<string, string> backgroungPic = new Dictionary<string, string>() 
 		{
@@ -26,7 +27,8 @@ namespace WpfApp1
 		public MainWindow() 
 		{
 			InitializeComponent();
-			resetUIElements();	
+			resetUIElements();
+			db.setupDatabase();
         }
 
 		private void resetUIElements()
@@ -105,7 +107,6 @@ namespace WpfApp1
 
 		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) 
 		{
-			//LocationModel selectedLocation = l.Where(f => f.name == comboBox.SelectedValue).FirstOrDefault();	
 			if (comboBox.SelectedIndex >= 0) { getForecast(l[comboBox.SelectedIndex].place_id); };
 		}
 
@@ -156,8 +157,8 @@ namespace WpfApp1
 
 		private void changeBackground() 
 		{		
-			skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Users\miguelrico\Desktop\weatherApp\WpfApp1\WpfApp1\Images\" + backgroungPic[t.daily.data[0].weather], UriKind.Relative));
-			myGrid.Background = skyStatusPicture;
+			//skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Users\miguelrico\Desktop\weatherApp\WpfApp1\WpfApp1\Images\" + backgroungPic[t.daily.data[0].weather], UriKind.Relative));
+			//myGrid.Background = skyStatusPicture;
 		}
 	}
 }

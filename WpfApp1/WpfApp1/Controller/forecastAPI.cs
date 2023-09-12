@@ -12,9 +12,11 @@ namespace WpfApp1
 	{
 		private WeatherModel t;
         private List <LocationModel> l;
+		private dataBase db = new dataBase();
 
 
-		public List<LocationModel> getLocationID(string parameter) 
+
+        public List<LocationModel> getLocationID(string parameter) 
 		{
 			string locationID = "";
 			var host = "ai-weather-by-meteosource.p.rapidapi.com";
@@ -22,17 +24,19 @@ namespace WpfApp1
 			var endpoint = "find_places";
 			var url = "https://ai-weather-by-meteosource.p.rapidapi.com/" + endpoint + "?" + fullParameter;
             string result = "[{\"name\":\"Cascais\",\"place_id\":\"cascais\",\"adm_area1\":\"Cascais\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.69681N\",\"lon\":\"9.42147W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"settlement\"},{\"name\":\"Cascais Municipality\",\"place_id\":\"cascais-8010561\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.74333N\",\"lon\":\"9.46382W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"administrative_area\"},{\"name\":\"Cascais\",\"place_id\":\"cascais-8012457\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.72527N\",\"lon\":\"9.47189W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"administrative_area\"},{\"name\":\"Estoril\",\"place_id\":\"estoril\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.70571N\",\"lon\":\"9.39773W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"settlement\"},{\"name\":\"São Domingos de Rana\",\"place_id\":\"sao-domingos-de-rana\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.70194N\",\"lon\":\"9.34083W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"settlement\"},{\"name\":\"Alcabideche\",\"place_id\":\"alcabideche\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.73366N\",\"lon\":\"9.40928W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"settlement\"},{\"name\":\"Monte Estoril\",\"place_id\":\"monte-estoril\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.70636N\",\"lon\":\"9.40595W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"settlement\"},{\"name\":\"São Domingos de Rana\",\"place_id\":\"sao-domingos-de-rana-8014743\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.72289N\",\"lon\":\"9.33921W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"administrative_area\"},{\"name\":\"Alcabideche\",\"place_id\":\"alcabideche-8012455\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.74206N\",\"lon\":\"9.42143W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"administrative_area\"},{\"name\":\"Estoril\",\"place_id\":\"estoril-8012458\",\"adm_area1\":\"Lisbon District\",\"adm_area2\":\"Cascais Municipality\",\"country\":\"Portuguese Republic\",\"lat\":\"38.70971N\",\"lon\":\"9.38979W\",\"timezone\":\"Europe/Lisbon\",\"type\":\"administrative_area\"}]";
-            		
-			try 
+
+            try 
 			{
+				result = sendRequest(url, "get", host, null);
                 l = JsonConvert.DeserializeObject<List<LocationModel>>(result);
-                //l = JsonConvert.DeserializeObject<List<LocationModel>>(sendRequest(url, "get", host, null));      
+                //l = JsonConvert.DeserializeObject<List<LocationModel>>(result);      
+                db.insertLogs("location", result);
             }
-			catch (Exception e) {
+            catch (Exception e) {
 				MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 
-			return l;
+            return l;
 		}
 
 
@@ -48,8 +52,10 @@ namespace WpfApp1
 
 			try
 			{
+				result = sendRequest(url, "get", host, null);
                 t = JsonConvert.DeserializeObject<WeatherModel>(result);
-                //t = JsonConvert.DeserializeObject<WeatherModel>(sendRequest(url, "get", host, null));
+                //t = JsonConvert.DeserializeObject<WeatherModel>(result);
+                db.insertLogs("forecast", result);
             }
 			catch(Exception e)
 			{
