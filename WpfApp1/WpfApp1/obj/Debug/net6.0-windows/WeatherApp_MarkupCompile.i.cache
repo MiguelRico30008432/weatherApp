@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Git\weatherApp\WpfApp1\WpfApp1\App.xaml
-11407045341
+2840773992
 
-11-1557652776
+13-966496847
 2001932861861
-MainWindow.xaml;
+logWindow.xaml;MainWindow.xaml;
 
-False
+True
 

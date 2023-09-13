@@ -151,7 +151,6 @@ namespace WpfApp1
                     feelsLike = t.daily.data[i].feels_like
                 });
 			}
-
             NextWeekDatagrid.ItemsSource = gridData;
 		}
 
@@ -160,5 +159,11 @@ namespace WpfApp1
 			//skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Users\miguelrico\Desktop\weatherApp\WpfApp1\WpfApp1\Images\" + backgroungPic[t.daily.data[0].weather], UriKind.Relative));
 			//myGrid.Background = skyStatusPicture;
 		}
-	}
+
+        private void MenuItem_logs_Click(object sender, RoutedEventArgs e)
+        {
+			logWindow logs = new logWindow();
+			logs.Show();
+        }
+    }
 }

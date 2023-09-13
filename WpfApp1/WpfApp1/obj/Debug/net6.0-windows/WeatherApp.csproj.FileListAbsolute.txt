@@ -148,3 +148,5 @@ C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win-arm\nati
 C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Git\weatherApp\WpfApp1\WpfApp1\bin\Debug\net6.0-windows\runtimes\win-x86\native\e_sqlite3.dll
+C:\Git\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\logWindow.g.cs
+C:\Git\weatherApp\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\logWindow.baml
