@@ -28,7 +28,6 @@ namespace WpfApp1
 		{
 			InitializeComponent();
 			resetUIElements();
-			db.setupDatabase();
         }
 
 		private void resetUIElements()
@@ -164,6 +163,11 @@ namespace WpfApp1
         {
 			logWindow logs = new logWindow();
 			logs.Show();
+        }
+
+        private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
+        {
+           Close();
         }
     }
 }

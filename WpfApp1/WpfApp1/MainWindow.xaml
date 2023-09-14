@@ -9,7 +9,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="_Exit" Click="MenuItem_Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Logs" Click="MenuItem_logs_Click"/>
         </Menu>
@@ -19,35 +19,45 @@
             <!--   </Grid.Background> -->
 
 
-            <Button x:Name="bt_getResults" Content="Get Results" HorizontalAlignment="Left" Margin="243,35,0,0" VerticalAlignment="Top" Click="bt_getResults_Click" Width="109"/>
-            <Label x:Name="lbl_search" Content="Search:" HorizontalAlignment="Left" Margin="4,11,0,0" VerticalAlignment="Top" Width="142"/>
-            <TextBox x:Name="tb_search" HorizontalAlignment="Left" Margin="8,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" AcceptsTab="True"/>
-            <Label x:Name="lbl_selectRegion" Content="Choose a especific region:" HorizontalAlignment="Left" Margin="425,8,0,0" VerticalAlignment="Top" Width="192" Visibility="Visible" />
-            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="431,32,0,0" VerticalAlignment="Top" Width="344" Visibility="Visible" SelectionChanged="comboBox_SelectionChanged"/>
+            <Button x:Name="bt_getResults" Content="Results" HorizontalAlignment="Left" Margin="228,25,0,0" VerticalAlignment="Top" Click="bt_getResults_Click" Width="42"/>
+            <Label x:Name="lbl_search" Content="Search:" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="142" Foreground="#FF5096D6"/>
+            <TextBox x:Name="tb_search" HorizontalAlignment="Left" Margin="8,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" AcceptsTab="True"/>
+            <Label x:Name="lbl_selectRegion" Content="Choose a especific region:" HorizontalAlignment="Left" Margin="4,46,0,0" VerticalAlignment="Top" Width="192" Visibility="Visible" Foreground="#FF5096D6"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="344" Visibility="Visible" SelectionChanged="comboBox_SelectionChanged"/>
 
 
-            <Label x:Name="lbl_today" Content="Current Weather" HorizontalAlignment="Left" Margin="53,117,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="lbl_today" Content="Current Weather" HorizontalAlignment="Left" Margin="13,117,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF5096D6"/>
 
-            <Label x:Name="lbl_dailyWeather" Content="Daily Weather" HorizontalAlignment="Left" Margin="331,117,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold"/>
-            <Label x:Name="lbl_t_temp" Content="Temperature" HorizontalAlignment="Left" Margin="65,156,0,0" VerticalAlignment="Top" Width="80"/>
-            <Label x:Name="lbl_t_temp_v" Content="{}{value}" HorizontalAlignment="Left" Margin="173,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
-            <Label x:Name="lbl_t_temp_min" Content="Temperature Min." HorizontalAlignment="Left" Margin="65,182,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_t_temp_min_v" Content="{}{value}" HorizontalAlignment="Left" Margin="173,182,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
-            <Label x:Name="lbl_t_temp_max" Content="Temperature Max." HorizontalAlignment="Left" Margin="65,208,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_t_temp_max_v" Content="{}{value}" HorizontalAlignment="Left" Margin="173,208,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
-            <Label x:Name="lbl_t_temp_sen" Content="Feels Like" HorizontalAlignment="Left" Margin="65,234,0,0" VerticalAlignment="Top" Width="80"/>
-            <Label x:Name="lbl_t_temp_sen_v" Content="{}{value}" HorizontalAlignment="Left" Margin="173,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
+            <Label x:Name="lbl_dailyWeather" Content="Daily Weather" HorizontalAlignment="Left" Margin="320,116,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" Foreground="#FF5096D6"/>
+            <Label x:Name="lbl_t_temp" Content="Temperature" HorizontalAlignment="Left" Margin="28,154,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label x:Name="lbl_t_temp_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
+            <Label x:Name="lbl_t_temp_min" Content="Temperature Min." HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_t_temp_min_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
+            <Label x:Name="lbl_t_temp_max" Content="Temperature Max." HorizontalAlignment="Left" Margin="28,206,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_t_temp_max_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
+            <Label x:Name="lbl_t_temp_sen" Content="Feels Like" HorizontalAlignment="Left" Margin="28,232,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label x:Name="lbl_t_temp_sen_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
 
-            <DataGrid Name ="NextWeekDatagrid" Margin="341,156,10,42" BorderBrush="White" Visibility="Visible" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" VerticalScrollBarVisibility="Disabled" AutoGenerateColumns="False">
+            <DataGrid Name ="NextWeekDatagrid" Margin="320,156,10,42" BorderBrush="White" Visibility="Visible" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Day" Width="80" IsReadOnly="True" Binding="{Binding Path= date}" />
                     <DataGridTextColumn Header="Temperature (ºC)" Width="100" IsReadOnly="True" Binding="{Binding Path= temp}" />
                     <DataGridTextColumn Header="Temp. Max(ºC)" Width="90" IsReadOnly="True" Binding="{Binding Path= tempMax}" />
                     <DataGridTextColumn Header="Temp. Min(ºC)" Width="90" IsReadOnly="True" Binding="{Binding Path= tempMin}" />
-                    <DataGridTextColumn Header="Feels Like" Width="90" IsReadOnly="True" Binding="{Binding Path= feelsLike}" />
+                    <DataGridTextColumn Header="Feels Like(ºC)" Width="90" IsReadOnly="True" Binding="{Binding Path= feelsLike}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="780" RenderTransformOrigin="0.5,0.5">
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="320,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="10,143,0,0" Stroke="Black" VerticalAlignment="Top" Width="242" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>

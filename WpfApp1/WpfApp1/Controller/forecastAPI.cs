@@ -14,8 +14,6 @@ namespace WpfApp1
         private List <LocationModel> l;
 		private dataBase db = new dataBase();
 
-
-
         public List<LocationModel> getLocationID(string parameter) 
 		{
 			string locationID = "";
@@ -29,17 +27,17 @@ namespace WpfApp1
 			{
 				//result = sendRequest(url, "get", host, null);
                 l = JsonConvert.DeserializeObject<List<LocationModel>>(result);      
-                db.insertLogs("location", result);
+                db.insertDataLogs("location", result);
             }
             catch (Exception e) {
+				db.insertErrorLogs("getLocationID()", e.Message);
 				MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-
             return l;
 		}
 
 
-		public WeatherModel getForecast(string parameter) 
+		public WeatherModel getForecast(string parameter)
 		{
 			var host = "ai-weather-by-meteosource.p.rapidapi.com";
 			var fullParameter = "place_id=" + parameter + "&language=en&units=metric";
@@ -51,11 +49,12 @@ namespace WpfApp1
 			{
 				//result = sendRequest(url, "get", host, null);
                 t = JsonConvert.DeserializeObject<WeatherModel>(result);
-                db.insertLogs("forecast", result);
+                db.insertDataLogs("forecast", result);
             }
 			catch(Exception e)
 			{
-				MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                db.insertErrorLogs("getForecast()", e.Message);
+                MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 
 			return t;
