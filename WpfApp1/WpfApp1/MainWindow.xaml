@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="WeatherApp" Height="450" Width="800">
+        Title="WeatherApp" Height="600" Width="900">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -19,16 +19,24 @@
             <!--   </Grid.Background> -->
 
 
-            <Button x:Name="bt_getResults" Content="Results" HorizontalAlignment="Left" Margin="228,25,0,0" VerticalAlignment="Top" Click="bt_getResults_Click" Width="42"/>
+            <Button x:Name="bt_getResults" Content="Results" HorizontalAlignment="Left" Margin="228,22,0,0" VerticalAlignment="Top" Click="bt_getResults_Click" Width="44" Height="25" BorderBrush="#FF5096D6" Background="White" Foreground="#FF5096D6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.535,0.484"/>
             <Label x:Name="lbl_search" Content="Search:" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="142" Foreground="#FF5096D6"/>
-            <TextBox x:Name="tb_search" HorizontalAlignment="Left" Margin="8,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" AcceptsTab="True"/>
+            <TextBox x:Name="tb_search" HorizontalAlignment="Left" Margin="8,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" AcceptsTab="True" Foreground="#FF5096D6"/>
             <Label x:Name="lbl_selectRegion" Content="Choose a especific region:" HorizontalAlignment="Left" Margin="4,46,0,0" VerticalAlignment="Top" Width="192" Visibility="Visible" Foreground="#FF5096D6"/>
-            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="344" Visibility="Visible" SelectionChanged="comboBox_SelectionChanged"/>
+            <ComboBox  x:Name="comboBox"  HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="344" Visibility="Visible" SelectionChanged="comboBox_SelectionChanged" BorderBrush="White" Foreground="#FF5096D6">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
 
 
-            <Label x:Name="lbl_today" Content="Current Weather" HorizontalAlignment="Left" Margin="13,117,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF5096D6"/>
 
-            <Label x:Name="lbl_dailyWeather" Content="Daily Weather" HorizontalAlignment="Left" Margin="320,116,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" Foreground="#FF5096D6"/>
+            <Label x:Name="lbl_today" Content="Current Weather" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF5096D6"/>
+
+            <Label x:Name="lbl_dailyWeather" Content="Daily Weather" HorizontalAlignment="Left" Margin="401,116,0,0" VerticalAlignment="Top" Width="199" FontWeight="Bold" Foreground="#FF5096D6"/>
             <Label x:Name="lbl_t_temp" Content="Temperature" HorizontalAlignment="Left" Margin="28,154,0,0" VerticalAlignment="Top" Width="80"/>
             <Label x:Name="lbl_t_temp_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
             <Label x:Name="lbl_t_temp_min" Content="Temperature Min." HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top"/>
@@ -38,7 +46,7 @@
             <Label x:Name="lbl_t_temp_sen" Content="Feels Like" HorizontalAlignment="Left" Margin="28,232,0,0" VerticalAlignment="Top" Width="80"/>
             <Label x:Name="lbl_t_temp_sen_v" Content="{}{value}" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.558" Width="49"/>
 
-            <DataGrid Name ="NextWeekDatagrid" Margin="320,156,10,42" BorderBrush="White" Visibility="Visible" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False">
+            <DataGrid Name ="NextWeekDatagrid" Margin="401,156,10,42" BorderBrush="#FF5096D6" Visibility="Visible" Background="White" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" OpacityMask="Black">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Day" Width="80" IsReadOnly="True" Binding="{Binding Path= date}" />
                     <DataGridTextColumn Header="Temperature (ºC)" Width="100" IsReadOnly="True" Binding="{Binding Path= temp}" />
@@ -47,7 +55,7 @@
                     <DataGridTextColumn Header="Feels Like(ºC)" Width="90" IsReadOnly="True" Binding="{Binding Path= feelsLike}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Rectangle HorizontalAlignment="Left" Height="1" Margin="320,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="470" RenderTransformOrigin="0.5,0.5">
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="401,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="487" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>
@@ -57,7 +65,37 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="1" Margin="10,143,0,0" Stroke="Black" VerticalAlignment="Top" Width="242" RenderTransformOrigin="0.5,0.5">
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="10,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="28,179,0,0" Stroke="#FFA0A0A0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="28,208,0,0" Stroke="#FFA0A0A0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="28,234,0,0" Stroke="#FFA0A0A0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>
