@@ -1,0 +1,6 @@
+C:\Users\miguelrico\Desktop\teste\WpfApp1.exe
+C:\Users\miguelrico\Desktop\teste\WpfApp1.dll
+C:\Users\miguelrico\Desktop\teste\WpfApp1.deps.json
+C:\Users\miguelrico\Desktop\teste\WpfApp1.runtimeconfig.json
+C:\Users\miguelrico\Desktop\teste\WpfApp1.pdb
+C:\Users\miguelrico\Desktop\teste\Newtonsoft.Json.dll

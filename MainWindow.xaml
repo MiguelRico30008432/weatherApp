@@ -1,0 +1,85 @@
+﻿<Window x:Class="WheaterApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WheaterApp"
+        xmlns:viewModel="clr-namespace:WheaterApp.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="700" 
+        Width="1100"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    
+    <Border Background="#272537" CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock 
+                Text="Weather App"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Foreground="White"
+                FontSize="22"
+                Margin="20,0,0,0"
+            />
+
+            <StackPanel Grid.Row="1">
+                <RadioButton
+                    Content="Weather"
+                    Height="50"
+                    Foreground="White"
+                    FontSize="14"
+                    Style="{StaticResource MenuButtonTheme}"
+                    IsChecked="True"
+                    Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton
+                    Content="Logs"
+                    Height="50"
+                    Foreground="White"
+                    FontSize="14"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Command="{Binding LogsViewCommand}"/>
+
+                <RadioButton
+                    Content="About"
+                    Height="50"
+                    Foreground="White"
+                    FontSize="14"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Command="{Binding AboutViewCommand}"/>
+
+                <RadioButton
+                    Content="Exit"
+                    Height="50"
+                    Foreground="White"
+                    FontSize="14"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Click="RadioButton_Checked"/>
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+
+        </Grid>
+    </Border>
+</Window>
