@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Git\WheaterApp\obj\Debug\
+C:\Git\weatherApp\obj\Debug\
 WheaterApp
 none
 false
 DEBUG;TRACE
-C:\Git\WheaterApp\App.xaml
+C:\Git\weatherApp\App.xaml
 5-1193710583
 
-22306033223
-17130278910
+23-709275404
+17-802544002
 MainWindow.xaml;MVVM\View\AboutView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LogsView.xaml;Theme\MenuButtonTheme.xaml;
 
 False

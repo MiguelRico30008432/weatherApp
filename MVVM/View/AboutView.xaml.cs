@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace WheaterApp.MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for AboutView.xaml
-    /// </summary>
     public partial class AboutView : UserControl
     {
         public AboutView()

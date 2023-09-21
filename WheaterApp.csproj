@@ -97,7 +97,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\Model\DataModels\dataBase.cs" />
+    <Compile Include="MVVM\Model\DataBase\BaseDataBase.cs" />
+    <Compile Include="MVVM\Model\DataBase\dataBase.cs" />
     <Compile Include="MVVM\Model\DataModels\dataGridModel.cs" />
     <Compile Include="MVVM\Model\DataModels\dataLogs.cs" />
     <Compile Include="MVVM\Model\DataModels\errorLogs.cs" />

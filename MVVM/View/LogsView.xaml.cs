@@ -15,14 +15,25 @@ using System.Windows.Shapes;
 
 namespace WheaterApp.MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for LogsView.xaml
-    /// </summary>
     public partial class LogsView : UserControl
     {
+        private dataBase db = new dataBase();
         public LogsView()
         {
             InitializeComponent();
+            setUpDataOnUIElements();
+
+        }
+
+        private void setUpDataOnUIElements()
+        {
+            tb_apiCalls.Text = dataBase.apiCallsNumber.ToString();
+
+            List<dataLogs> dataLogsGrid = db.getDataLogs();
+            logsDataDatagrid.ItemsSource = dataLogsGrid;
+
+            List<errorLogs> errorLogsGrid = db.getErrorLogs();
+            logsErrorDatagrid.ItemsSource = errorLogsGrid;
         }
     }
 }

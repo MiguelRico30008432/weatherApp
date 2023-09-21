@@ -8,13 +8,13 @@ namespace WheaterApp
 {
 	public class forecastAPI : baseAPI 
 	{
+		private dataBase db = new dataBase();
 		private WeatherModel t;
         private List <LocationModel> l;
+		private string host = "ai-weather-by-meteosource.p.rapidapi.com";
 
         public List<LocationModel> getLocationID(string parameter) 
 		{
-			string locationID = "";
-			var host = "ai-weather-by-meteosource.p.rapidapi.com";
 			var fullParameter = "text=" + parameter;
 			var endpoint = "find_places";
 			var url = "https://ai-weather-by-meteosource.p.rapidapi.com/" + endpoint + "?" + fullParameter;
@@ -24,10 +24,10 @@ namespace WheaterApp
 			{
 				//result = sendRequest(url, "get", host, null);
                 l = JsonConvert.DeserializeObject<List<LocationModel>>(result);
-				new dataBase().insertDataLogs("location", result);
+				db.insertDataLogs("location", result);
             }
             catch (Exception e) {
-				//db.insertErrorLogs("getLocationID()", e.Message);
+				db.insertErrorLogs("getLocationID()", e.Message);
 				MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
             return l;
@@ -36,7 +36,6 @@ namespace WheaterApp
 
 		public WeatherModel getForecast(string parameter)
 		{
-			var host = "ai-weather-by-meteosource.p.rapidapi.com";
 			var fullParameter = "place_id=" + parameter + "&language=en&units=metric";
 			var endpoint = "daily";
 			var url = "https://ai-weather-by-meteosource.p.rapidapi.com/" + endpoint + "?" + fullParameter;
@@ -46,14 +45,13 @@ namespace WheaterApp
 			{
 				//result = sendRequest(url, "get", host, null);
                 t = JsonConvert.DeserializeObject<WeatherModel>(result);
-               // db.insertDataLogs("forecast", result);
+                db.insertDataLogs("forecast", result);
             }
 			catch(Exception e)
 			{
-                //db.insertErrorLogs("getForecast()", e.Message);
+                db.insertErrorLogs("getForecast()", e.Message);
                 MessageBox.Show(e.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-
 			return t;
 		}
 	}
