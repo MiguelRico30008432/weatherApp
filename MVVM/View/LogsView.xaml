@@ -7,28 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid x:Name="myGrid" Margin="0,0,0,-6">
+    <Border>
+        <Grid x:Name="myGrid" Margin="0,0,0,-6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Data" Foreground="#FF5096D6"/>
+            <Label Grid.Row="0" x:Name="apiNumber" Content="[value]" Margin="800,0,0,0" Foreground="#FF5096D6"/>
+            <Label Grid.Row="0" Content="API Number of Calls"  Margin="686,0,0,0"/>
 
-        <DataGrid Name ="logsDataDatagrid" Margin="26,50,0,264" Visibility="Visible" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="739" Foreground="Black" BorderBrush="{x:Null}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Width="100" IsReadOnly="True" Binding="{Binding Path= dateTime}" />
-                <DataGridTextColumn Header="Type" Width="80" IsReadOnly="True" Binding="{Binding Path= type}" />
-                <DataGridTextColumn Header="Json" Width="500" IsReadOnly="True" Binding="{Binding Path= json}" />
-            </DataGrid.Columns>
-        </DataGrid>
+            <DataGrid Grid.Row="0" Name ="logsDataDatagrid" Margin="0,40,20,0" Visibility="Visible" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" Foreground="Black" BorderBrush="{x:Null}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Width="100" IsReadOnly="True" Binding="{Binding Path= dateTime}" />
+                    <DataGridTextColumn Header="Type" Width="80" IsReadOnly="True" Binding="{Binding Path= type}" />
+                    <DataGridTextColumn Header="Json" Width="500" IsReadOnly="True" Binding="{Binding Path= json}" />
+                </DataGrid.Columns>
+            </DataGrid>
 
-        <DataGrid Name ="logsErrorDatagrid" Margin="26,258,26,64" BorderBrush="White" Visibility="Visible" VerticalScrollBarVisibility="Disabled" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Width="80" IsReadOnly="True" Binding="{Binding Path= dateTime}" />
-                <DataGridTextColumn Header="Location" Width="100" IsReadOnly="True" Binding="{Binding Path= errorLocation}" />
-                <DataGridTextColumn Header="Message" Width="500" IsReadOnly="True" Binding="{Binding Path= erroMessage}" />
+            
+            <DataGrid Grid.Row="1" Name ="logsErrorDatagrid" Margin="0,30,20,20" BorderBrush="White" Visibility="Visible" VerticalScrollBarVisibility="Disabled" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Width="80" IsReadOnly="True" Binding="{Binding Path= dateTime}" />
+                    <DataGridTextColumn Header="Location" Width="100" IsReadOnly="True" Binding="{Binding Path= errorLocation}" />
+                    <DataGridTextColumn Header="Message" Width="500" IsReadOnly="True" Binding="{Binding Path= erroMessage}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <Label Grid.Row="1" Content="Errors" Foreground="#FF5096D6"/>
+        </Grid>
 
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label Content="Data" HorizontalAlignment="Left" Margin="9,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,0.492" Foreground="#FF5096D6"/>
-        <Label Content="Errors" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,0.492" Foreground="#FF5096D6"/>
-        <TextBox x:Name="tb_apiCalls" HorizontalAlignment="Left" Margin="755,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="35"/>
-        <Label Content="API Number of Calls" HorizontalAlignment="Left" Margin="641,4,0,0" VerticalAlignment="Top"/>
-    </Grid>
+    </Border>
+    
 
 </UserControl>

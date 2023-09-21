@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Git\weatherApp\App.xaml
-5-1193710583
+61816354393
 
 23-709275404
 17-802544002
-MainWindow.xaml;MVVM\View\AboutView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LogsView.xaml;Theme\MenuButtonTheme.xaml;
+MainWindow.xaml;MVVM\View\AboutView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LogsView.xaml;Theme\MenuButtonTheme.xaml;Theme\textBoxTheme.xaml;
 
 False
 

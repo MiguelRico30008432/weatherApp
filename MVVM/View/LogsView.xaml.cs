@@ -27,7 +27,7 @@ namespace WheaterApp.MVVM.View
 
         private void setUpDataOnUIElements()
         {
-            tb_apiCalls.Text = dataBase.apiCallsNumber.ToString();
+            apiNumber.Content = dataBase.apiCallsNumber.ToString();
 
             List<dataLogs> dataLogsGrid = db.getDataLogs();
             logsDataDatagrid.ItemsSource = dataLogsGrid;

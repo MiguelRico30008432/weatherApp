@@ -11,14 +11,15 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
+        WindowStartupLocation="CenterScreen"
         AllowsTransparency="True">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    
-    
-    <Border Background="#272537" CornerRadius="10">
+
+
+    <Border Background="#4A5762" CornerRadius="10">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -36,8 +37,7 @@
                 HorizontalAlignment="Left"
                 Foreground="White"
                 FontSize="22"
-                Margin="20,0,0,0"
-            />
+                Margin="20,0,0,0"/>
 
             <StackPanel Grid.Row="1">
                 <RadioButton

@@ -120,7 +120,6 @@ namespace WheaterApp.MVVM.View
         private void getForecast(string placeID)
         {
             t = apiWeather.getForecast(placeID);
-            changeBackground();
             populateLabels();
         }
 
@@ -160,19 +159,5 @@ namespace WheaterApp.MVVM.View
             }
             NextWeekDatagrid.ItemsSource = gridData;
         }
-
-        private void changeBackground()
-        {
-            //skyStatusPicture.ImageSource = new BitmapImage(new Uri(@"C:\Users\miguelrico\Desktop\weatherApp\WpfApp1\WpfApp1\Images\" + backgroungPic[t.daily.data[0].weather], UriKind.Relative));
-            //myGrid.Background = skyStatusPicture;
-        }
-
-        private void MenuItem_logs_Click(object sender, RoutedEventArgs e)
-        {
-            //logWindow logs = new logWindow();
-            //logs.Show();
-        }
-
-
     }
 }

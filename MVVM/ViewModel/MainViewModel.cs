@@ -40,8 +40,8 @@ namespace WheaterApp.MVVM.ViewModel
         }
 
 
-        private void changeViewHome(object paramerte) {CurrentView = homeVM;}
+        private void changeViewHome(object paramerte) { CurrentView = homeVM; }
         private void changeViewLogs(object paramerte) { CurrentView = logsVM; }
-        private void changeAboutLogs(object paramerte) { CurrentView = logsVM; }
+        private void changeAboutLogs(object paramerte) { CurrentView = aboutVM; }
     }
 }

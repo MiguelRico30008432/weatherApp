@@ -100,3 +100,4 @@ C:\Git\weatherApp\obj\Debug\WheaterApp.csproj.CoreCompileInputs.cache
 C:\Git\weatherApp\obj\Debug\WheaterApp.csproj.CopyComplete
 C:\Git\weatherApp\obj\Debug\WheaterApp.exe
 C:\Git\weatherApp\obj\Debug\WheaterApp.pdb
+C:\Git\weatherApp\obj\Debug\Theme\textBoxTheme.baml
